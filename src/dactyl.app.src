@@ -1,7 +1,7 @@
 {application, dactyl,
  [
   {description, "String templating library for Erlang"},
-  {vsn, "0.1"},
+  {vsn, "1.0.0"},
   {registered, []},
   {applications, [kernel,stdlib]},
   {env, []}
