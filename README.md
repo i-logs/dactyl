@@ -56,8 +56,8 @@ The alternate branch is optional. Conditional branches are terminated with the `
 
 ```erlang
 6> F=fun (N) -> 
-       dactyl:render("You have ~any~?~n~;~:no~; eggs.",[{any,N>0},
-                                                        {n,N}]) 
+       dactyl:render("You have ~any~?~number_of_eggs~;~:no~; eggs.",[{any,N>0},
+                                                        {number_of_eggs,N}]) 
      end.
 #Fun<erl_eval.6.80247286>
 7> F(6).
@@ -71,7 +71,9 @@ The alternate branch is optional. Conditional branches are terminated with the `
 If you have a list of things you would like to expand multiple times (once per element in the list), then you can use the `~[` function to expand a list of parameter lists.
 
 ```erlang
-9> dactyl:render("Hi,~people~[ ~name~;~].",[{people,[[{name,"Jeff"}],                                                     [{name,"Tony"}],                                                     [{name,"Mark"}]]
+9> dactyl:render("Hi,~people~[ ~name~;~].",[{people,[[{name,"Jeff"}],
+                                                     [{name,"Tony"}],
+                                                     [{name,"Mark"}]]
                                             }]).
 "Hi, Jeff Tony Mark."
 ```
